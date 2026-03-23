@@ -1,0 +1,85 @@
+# Backend
+backend/venv/
+backend/.env
+backend/.env.*
+backend/erp_system.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+
+# Test artifacts
+coverage/
+*.coverage
+*.test.js
+
+# Misc
+*.bak
+*.tmp
+*.orig
+*.rej
+ARQUIVOS_REMOVIDOS.md
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+# lib/ is for Python packages, exclude backend lib generation
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+
+# Exception: allow frontend src/lib to be tracked
+!frontend/src/lib/
+!frontend/src/lib/**
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.venv
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Frontend
+node_modules/
+dist/
+.env.local
+.env.*.local
+
+# Environment
+.env
+.env.local
+
+# Database
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db

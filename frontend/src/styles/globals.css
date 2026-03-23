@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+html, body {
+  @apply h-full m-0 p-0 font-sans;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Theme CSS Variables */
+:root {
+  /* Light mode variables (default) */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  --color-bg-tertiary: #f3f4f6;
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-tertiary: #9ca3af;
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  --color-input: #ffffff;
+  --color-input-border: #d1d5db;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Transition timing */
+  --transition-theme: color 200ms ease, background-color 200ms ease,
+    border-color 200ms ease, box-shadow 200ms ease;
+}
+
+html.dark {
+  /* Dark mode variables */
+  --color-bg: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-tertiary: #334155;
+  --color-text: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-tertiary: #94a3b8;
+  --color-border: #475569;
+  --color-border-light: #1e293b;
+  --color-input: #1e293b;
+  --color-input-border: #475569;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth theme transition */
+html {
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Scrollbar customizado */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Utility classes customizadas */
+.btn-primary {
+  @apply px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-gray-200 text-gray-900 rounded-lg font-medium hover:bg-gray-300 transition-colors;
+}
+
+.btn-danger {
+  @apply px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors;
+}
+
+.input-base {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.card-sm {
+  @apply bg-white rounded-lg shadow-sm p-4;
+}
+
+.text-error {
+  @apply text-red-600;
+}
+
+.text-success {
+  @apply text-green-600;
+}
+
+.text-warning {
+  @apply text-yellow-600;
+}
+
+.text-info {
+  @apply text-blue-600;
+}
+
+/* GitHub Button - Liquid Button from UIverse */
+.liquid-button {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 50 !important;
+  padding: 20px 50px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) !important;
+  background: #4973ff !important;
+  border-radius: 50px !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.liquid-button:before,
+.liquid-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+}
+
+.liquid-button:before {
+  left: -100%;
+  clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+}
+
+.liquid-button:after {
+  right: -100%;
+  clip-path: polygon(30% 0, 90% 0, 70% 100%, 10% 100%);
+}
+
+.liquid-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(73, 115, 255, 0.6) !important;
+}
+
+.liquid-button:hover:before {
+  left: 100%;
+  transition: all 0.7s ease;
+}
+
+.liquid-button:hover:after {
+  right: 100%;
+  transition: all 0.7s ease;
+}
+
+.liquid-button .liquid {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #3498db, #8e44ad);
+  transition: all 0.5s ease;
+}
+
+.liquid-button .liquid:before,
+.liquid-button .liquid:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -75%);
+}
+
+.liquid-button .liquid:before {
+  border-radius: 45%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: liquid-button-rotate 10s linear infinite;
+}
+
+.liquid-button .liquid:after {
+  border-radius: 40%;
+  background: rgba(255, 255, 255, 0.15);
+  animation: liquid-button-rotate 15s linear infinite;
+}
+
+.liquid-button:hover .liquid {
+  top: -100%;
+}
+
+.liquid-button:active {
+  transform: scale(0.95);
+}
+
+@keyframes liquid-button-rotate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+.liquid-button .bubbles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.liquid-button:hover .bubbles {
+  opacity: 1;
+}
+
+.liquid-button .bubble {
+  position: absolute;
+  bottom: -20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: liquid-button-rise 4s infinite ease-in;
+}
+
+.liquid-button .bubble:nth-child(1) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-duration: 3s;
+}
+
+.liquid-button .bubble:nth-child(2) {
+  left: 20%;
+  width: 25px;
+  height: 25px;
+  animation-duration: 4s;
+  animation-delay: 0.5s;
+}
+
+.liquid-button .bubble:nth-child(3) {
+  left: 35%;
+  width: 15px;
+  height: 15px;
+  animation-duration: 3.5s;
+  animation-delay: 1s;
+}
+
+.liquid-button .bubble:nth-child(4) {
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 4.5s;
+  animation-delay: 1.5s;
+}
+
+.liquid-button .bubble:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-duration: 3.5s;
+  animation-delay: 0.5s;
+}
+
+.liquid-button .bubble:nth-child(6) {
+  left: 80%;
+  width: 25px;
+  height: 25px;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+@keyframes liquid-button-rise {
+  0% {
+    bottom: -20px;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translate(10px, -50px);
+  }
+  100% {
+    bottom: 120%;
+    transform: translateX(-20px);
+  }
+}
+
+/* Dark mode support */
+html.dark .liquid-button {
+  background: #5a7fff !important;
+  box-shadow: 0 4px 15px rgba(90, 127, 255, 0.3) !important;
+}
+
+html.dark .liquid-button:hover {
+  box-shadow: 0 10px 30px rgba(90, 127, 255, 0.5) !important;
+}
+
